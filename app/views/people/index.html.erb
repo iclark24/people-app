@@ -1,9 +1,12 @@
 <h1> People </h1>
 <p><%= link_to 'New Person', new_person_path %></p>
+<div id="cont">
 <% @people.each do |person| %>
-  <h2><%= person.first_name %></h2>
-  <%= link_to 'Show Person', person_path(person) %>
-  <%= link_to 'Edit Person', edit_person_path(person) %>
-  <%= link_to 'Destroy Person', person, method: :delete %>
-
+<div id="inside">
+  <h2><%= person.full_name %></h2>
+  <p><%= link_to 'More...', person_path(person) %></p>
+  <p><%= link_to 'Edit', edit_person_path(person) %></p>
+  <p><%= link_to 'Delete', person, method: :delete %></p>
+</div>
 <% end %>
+</div>
